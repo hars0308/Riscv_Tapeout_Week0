@@ -93,6 +93,15 @@
 
 ---
 
+# SoC Design Flow (O1 → O4)
+
++----------------------+     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     +----------------------+
+|                      |     :   O1  Chip Model     : |                      |     :   O2  RTL Design     : |                      |     :   O3  Synthesis     : |                      |
+|   (O1) SPEC / C      |:::::::::::::::::::::::::::::|  (O2) RTL (Verilog)   |:::::::::::::::::::::::::::::| (O3) Gate-level Netlist |:::::::::::::::::::::::::::::| (O4) Physical & Post-  |
+|   Model (SystemC /   |     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     |   silicon validation   |
+|   C reference + TB)  |     : Testbench in C       : |  Functional verify    |     : Test against C model: |  Integrate macros (SRAM)|     : Floorplan → Layout :     |   (silicon, boards,    |
+|                      |     : (golden reference)   : |  & simulate (RTL)     |     : & refine RTL         : |  + analog IPs + IO     |     : CTS → Routing →   : |   bringup, apps)       |
++----------------------+     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     +----------------------+     : : : : : : : : : :     +----------------------+
 ## **Important Notes**
 
 * **O1 = O2 = O3 = O4** means:
@@ -111,5 +120,11 @@
 ---
 </details>
 
+<details>
+<summary><b>Tools Instructions and installation.:</b> Toll Installation </summary>   
+<br>
 
+
+ 
+</details>
 
