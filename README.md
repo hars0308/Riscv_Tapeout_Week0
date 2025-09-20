@@ -304,6 +304,31 @@ make test
 
 ---
 
+Screentshots of the tools installed in Virtual Machine:
+
+1.Yosys
+--
+<img width="831" height="160" alt="Screenshot From 2025-09-20 15-31-51" src="https://github.com/user-attachments/assets/06d0a471-cb21-460d-a00a-19f1b2a1d96b" />
+
+2.Icarus Verilog
+--
+<img width="832" height="498" alt="Screenshot From 2025-09-20 15-41-35" src="https://github.com/user-attachments/assets/7b5eab01-dfbf-4f93-bb63-db81de91168a" />
+
+3.GTKWave
+--
+<img width="832" height="498" alt="Screenshot From 2025-09-20 15-43-03" src="https://github.com/user-attachments/assets/de1f19dd-3dd6-4485-9a5d-8f5f185465cc" />
+
+4.Ngspice
+-
+<img width="866" height="629" alt="Screenshot From 2025-09-20 16-36-08" src="https://github.com/user-attachments/assets/13e3eafe-8a2a-4612-8150-2c32bb2b5655" />
+
+5.Magic
+--
+<img width="866" height="629" alt="Screenshot From 2025-09-20 16-46-29" src="https://github.com/user-attachments/assets/3117226d-f494-4c7a-955a-12c0e299ea44" />
+
+6.OpenLane
+--
+<img width="866" height="629" alt="Screenshot From 2025-09-20 19-55-33" src="https://github.com/user-attachments/assets/bd1e1b7b-b857-4500-8411-003d6a86f128" />
 
  
 </details>
