@@ -1,6 +1,8 @@
 # Riscv_Tapeout_Week0
 
-
+<details>
+<summary><b> Day 1:</b> Design and verify a 2:1 mux </summary>   
+<br>
 
 ## **1. Chip Modelling Stage (Specification) – O1**
 
@@ -107,6 +109,7 @@
   * **Hard IPs (HM)**: Pre-designed blocks like SRAM, PLL, ADC, etc.
 
 ---
+</details>
 
 
 
