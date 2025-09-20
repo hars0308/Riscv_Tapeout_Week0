@@ -123,8 +123,186 @@
 </details>
 
 <details>
-<summary><b>Tools Instructions and installation.:</b> Toll Installation </summary>   
+<summary><b>Tools Instructions and installation.:</b> Tool Installation </summary>   
 <br>
+
+
+##  System Requirements
+
+- **OS**: Ubuntu 20.04 or later  
+- **RAM**: Minimum 6 GB  
+- **Storage**: Minimum 50 GB  
+- **CPU**: 4 vCPUs  
+- **Virtualization**: If using Windows/Mac, install [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads)  
+
+----
+
+##  Tools and Installation
+
+### 1. Yosys – Logic Synthesis Tool
+Yosys is an **open-source synthesis tool** that converts Verilog RTL designs into **gate-level netlists**.  
+It optimizes circuits and prepares them for physical design.  
+
+**Installation**
+```bash
+sudo apt-get update
+git clone https://github.com/YosysHQ/yosys.git
+cd yosys
+sudo apt install make build-essential clang bison flex \
+libreadline-dev gawk tcl-dev libffi-dev git \
+graphviz xdot pkg-config python3 libboost-system-dev \
+libboost-python-dev libboost-filesystem-dev zlib1g-dev
+make config-gcc
+make
+sudo make install
+````
+
+---
+
+### 2. Icarus Verilog (iverilog) – Simulation Tool
+
+Icarus Verilog is used for **simulating Verilog code** to verify functionality before synthesis and layout.
+
+**Installation**
+
+```bash
+sudo apt-get update
+sudo apt-get install iverilog
+```
+
+---
+
+### 3. GTKWave – Waveform Viewer
+
+GTKWave is a **waveform viewer** that allows users to visualize simulation results (`.vcd` files) and debug RTL behavior.
+
+**Installation**
+
+```bash
+sudo apt-get update
+sudo apt install gtkwave
+```
+
+---
+
+### 4. OpenSTA – Static Timing Analysis
+
+OpenSTA performs **timing analysis** of gate-level netlists.
+It checks whether a design meets timing constraints without requiring simulation vectors.
+
+**Installation**
+
+```bash
+git clone https://github.com/The-OpenROAD-Project/OpenSTA.git
+cd OpenSTA
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+```
+
+---
+
+### 5. Ngspice – Circuit Simulation
+
+Ngspice is a **SPICE-based simulator** used for analog and mixed-signal circuit simulation at the transistor level.
+
+**Installation**
+
+```bash
+wget https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/37/ngspice-37.tar.gz
+tar -zxvf ngspice-37.tar.gz
+cd ngspice-37
+mkdir release
+cd release
+../configure --with-x --with-readline=yes --disable-debug
+make
+sudo make install
+```
+
+---
+
+### 6. Magic – Layout Editor
+
+Magic is a **VLSI layout tool** that supports layout editing, design rule checking (DRC), and netlist extraction.
+
+**Installation**
+
+```bash
+sudo apt-get install m4 tcsh csh libx11-dev tcl-dev tk-dev \
+libcairo2-dev mesa-common-dev libglu1-mesa-dev libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+./configure
+make
+sudo make install
+```
+
+---
+
+### 7. OpenLane – RTL to GDSII Flow
+
+OpenLane is a **complete open-source flow** for chip design.
+It integrates synthesis, floorplanning, placement, routing, and signoff checks to generate final **GDSII** layouts.
+
+**Installation**
+
+```bash
+# Update system
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install dependencies
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+# Install Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+
+# Verify Docker
+sudo docker run hello-world
+
+# Add user to Docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot
+```
+
+After reboot:
+
+```bash
+docker run hello-world
+```
+
+Now install **OpenLane**:
+
+```bash
+cd $HOME
+git clone https://github.com/The-OpenROAD-Project/OpenLane
+cd OpenLane
+make
+make test
+```
+
+---
+
+## Tools Summary
+
+| Tool               | Description                | Use in VLSI Flow                 |
+| ------------------ | -------------------------- | -------------------------------- |
+| **Yosys**          | Logic synthesis tool       | RTL → Gate-level netlist         |
+| **Icarus Verilog** | Verilog simulator          | Functional verification          |
+| **GTKWave**        | Waveform viewer            | Debugging simulation outputs     |
+| **OpenSTA**        | Timing analysis tool       | Ensures timing closure           |
+| **Ngspice**        | SPICE circuit simulator    | Analog & mixed-signal simulation |
+| **Magic**          | Layout editor              | IC layout, DRC, LVS              |
+| **OpenLane**       | Complete RTL-to-GDSII flow | Full chip design automation      |
+
+---
 
 
  
