@@ -1,7 +1,7 @@
 # Riscv_Tapeout_Week0
 
 <details>
-<summary><b> Day 1:</b> Design and verify a 2:1 mux </summary>   
+<summary><b>Digital VLSI SOC Design and Planning:</b> Summary </summary>   
 <br>
 
 ## **1. Chip Modelling Stage (Specification) – O1**
